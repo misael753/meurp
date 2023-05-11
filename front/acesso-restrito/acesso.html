@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mines Hack</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="banner">
+            <img src="images/63ffcaa9aed37-xs.png" alt="Oportunidade Única Identificada">
+        </div>
+        <div id="text">
+            <p id="texto" class="texto"><b>💣Apostar: </b>3 Minas</p>
+        </div>
+        <div id="game-wrapper" class="game-wrapper">
+            <div id="board" class="board">
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div> 
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+                <div><img src="images/empty.png" alt="💣"></div>
+            </div>
+            <img id="overlay" class="overlay" src="images/giphy.gif" alt="Desfocado" style="display: block;">
+            <div class="
+            status-container" style="opacity: 1;">
+                <p id="status" class="status" style="display: block;">Injetando script</p>
+            </div>
+        </div>
+        <p id="info" class="info"></p>
+        <button id="generate-opportunity" class="generate-opportunity">Gerar Hack</button>
+        <br>
+
+        <div id="lnk">
+            <a href="https://tracking.braxbet.com/o/hfQbZm?lpage=HPK4a6" target="_blank"><button id="cadastro"
+                    class="cadastro">Jogue aqui</button></a>
+        </div>
+        <p id="cadastro-texto"><b>☝️Clique no botão vermelho </b> para efetuar o cadastro na <b>ÚNICA</b> plataforma que
+            o robô analisa.</p>
+
+        <div style="margin: 20px 0;"></div>
+
+    </div>
+    <script>
+        const boardElement = document.getElementById("board");
+        const y = "s"
+        const overlayElement = document.getElementById("overlay");
+        const statusElement = document.getElementById("status");
+        const generateOpportunityButton = document.getElementById("generate-opportunity");
+        
+        function generateMinesBoard(diamond_positions) {
+            const grid = Array.from({
+                length: 25
+            }, (_, i) => diamond_positions.includes(i) ? "💎" : "💣");
+            return Array.from({
+                length: 5
+            }, (_, i) => grid.slice(i * 5, i * 5 + 5));
+        }
+        function renderBoard(board) {
+            boardElement.innerHTML = board.map((row) => row.map((cell) => `<div><img src="${cell === "💎" ? "images/diamond.png" : "images/empty.png"}" alt="${cell}"></div>`).join("")).join("");
+        }
+        function handleClickGenerateOpportunity() {
+            overlayElement.style.display = "block";
+            statusElement.style.display = "block";
+            statusElement.parentNode.style.opacity = "1";
+            const diamond_positions = randomDiamondPositions();
+            const board = generateMinesBoard(diamond_positions);
+            renderBoard(board);
+            statusElement.textContent = "Injetando script";
+            setTimeout(() => {
+                statusElement.textContent = "Verificando historico";
+            }
+                , 2000);
+            setTimeout(() => {
+                statusElement.textContent = "Hackeado com Sucesso";
+            }
+                , 4000);
+            setTimeout(() => {
+                overlayElement.style.display = "none";
+                statusElement.style.display = "none";
+                statusElement.parentNode.style.opacity = "0";
+            }
+                , 6000);
+        }
+        function randomDiamondPositions() {
+            return Array.from({
+                length: 4
+            }, () => Math.floor(Math.random() * 25));
+        }
+        generateOpportunityButton.addEventListener("click", handleClickGenerateOpportunity);
+
+       
+
+    </script>
+
+
+</body>
+
+</html>
